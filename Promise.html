@@ -1,0 +1,49 @@
+<script>
+
+    /*  let complete = true;
+    let prom0 = new Promise(function(resolve,reject){
+        if(complete){
+            resolve("Completed!")
+        }
+        else{
+            reject("Incomplete!")
+        }
+    })
+
+    console.log(prom0)
+    */
+
+    function prom(complete) {
+
+        return new Promise(function (resolve, reject) {
+            console.log("Fetching data, please wait")
+            setTimeout(()=>{
+                if (complete) {
+                resolve("I am successful")
+            }
+            else {
+                reject("I didn't attempt")
+            }
+            }, 2000)
+        });
+    }
+
+    // let onfulfilment = (result) => {
+    //     console.log(result)
+    // }
+
+    // let onrejection = (error) => { 
+    //     console.log(error)
+    // }
+    
+    // prom(false).then(onfulfilment);
+    // prom(false).catch(onrejection);
+    
+    prom(false).then((result) => {
+        console.log(result)
+    }).catch((error) => { 
+        console.log(error)
+    });
+    
+
+</script>
